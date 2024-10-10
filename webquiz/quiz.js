@@ -6,4 +6,7 @@ const answers = ['スーパファミコン',
 'ニンテンドウーDS'
 ];
 const ccorrect = 'ニンテンドーDS';
- 
+
+document.getElementById('js-question').textContent = question;
+
+document.getElementsByTagName('button')[0].textContent = answers[0];
