@@ -3,25 +3,41 @@ const question = 'ゲーム市場、もっとも売れたゲームきたどれ�
 const answers = ['スーパファミコン',
 'プレイステーション２',
 'ニンテンドウースイッチ',
-'ニンテンドウーDS'
+'ニンテンドーDS'
 ];
 const correct = 'ニンテンドーDS';
-
-document.getElementById('js-question').textContent = question;
 
 
 const $button = document.getElementsByTagName('button');
 
-button[0].textContent = answers[0];
-button[1].textContent = answers[1];
-button[2].textContent = answers[2];
-button[3].textContent = answers[3];
+const setupQuiz = () =>{
+    document.getElementById('js-question').textContent = question;
+    let buttonIndex = 0;
+    let buttonLength = $button.length
+    
+    while(buttonIndex < buttonLength){
+        $button[buttonIndex].textContent = answers[buttonIndex];
+        buttonIndex++;
+    };
+};
+setupQuiz();
 
-$button[0].addEventListener('click', () => {
-    //クリックされたら
-    if(correct === answers[0] ){
+const clickHandler = (e) =>{
+    if(correct === e.target.textContent ){
         window.alert('正解');
     }else {
         window.alert('間違い');
     }
-});
+};
+
+let handlerIndex = 0;
+const buttonLength = $button.length;
+
+while(handlerIndex < buttonLength){
+    $button[handlerIndex].addEventListener('click', (e) => clickHandler(e));
+    handlerIndex++;
+};
+
+
+
+
