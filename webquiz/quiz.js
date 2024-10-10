@@ -5,8 +5,23 @@ const answers = ['スーパファミコン',
 'ニンテンドウースイッチ',
 'ニンテンドウーDS'
 ];
-const ccorrect = 'ニンテンドーDS';
+const correct = 'ニンテンドーDS';
 
 document.getElementById('js-question').textContent = question;
 
-document.getElementsByTagName('button')[0].textContent = answers[0];
+
+const $button = document.getElementsByTagName('button');
+
+button[0].textContent = answers[0];
+button[1].textContent = answers[1];
+button[2].textContent = answers[2];
+button[3].textContent = answers[3];
+
+$button[0].addEventListener('click', () => {
+    //クリックされたら
+    if(correct === answers[0] ){
+        window.alert('正解');
+    }else {
+        window.alert('間違い');
+    }
+});
