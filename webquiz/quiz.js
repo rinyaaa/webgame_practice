@@ -31,7 +31,6 @@ const clickHandler = (e) =>{
 };
 
 let handlerIndex = 0;
-const buttonLength = $button.length;
 
 while(handlerIndex < buttonLength){
     $button[handlerIndex].addEventListener('click', (e) => clickHandler(e));
